@@ -413,3 +413,22 @@ body.retro-bg {
     transition: 0.15s;
     z-index: 9999;
 }
+.foto-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.foto-retro {
+    width: 180px;          /* puoi ridurre a 150 se vuoi */
+    border: 3px solid #000;
+    border-radius: 6px;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto;
+}
+
+.foto-caption {
+    font-size: 12px;
+    margin-top: 6px;
+    font-family: "Press Start 2P", monospace;
+}
