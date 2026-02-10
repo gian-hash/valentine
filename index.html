@@ -24,6 +24,7 @@
         function check() {
             const pwd = document.getElementById("pwd").value;
             if (pwd === "16012021") {
+                localStorage.setItem("valentineAuth", "true");
                 window.location.href = "home.html";
             } else {
                 document.getElementById("error").innerText = "Password errata";
