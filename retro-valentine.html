@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Valentine ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="retro-bg">
+
+<div class="retro-window">
+    <div class="retro-title">
+        <span>LOVE.exe</span>
+        <span>❤️ ❤️ ❤️</span>
+    </div>
+
+    <div class="retro-content">
+
+        <img src="img/pixelhusky.png" class="husky" alt="husky pixel art">
+
+        <h2 class="retro-question">Will you be my Valentine?</h2>
+
+        <div class="retro-buttons">
+            <button class="retro-yes" onclick="sayYes()">YES 💘</button>
+            <button class="retro-no" id="noBtn">NO 💔</button>
+        </div>
+
+        <p id="retro-answer" class="retro-answer"></p>
+
+        <div class="letter-box">
+            <img src="img/letter.png" class="letter" alt="lettera pixel art">
+            <p class="letter-text">♡ Letter For You ♡</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 70 + "vw";
+    const y = Math.random() * 60 + "vh";
+    noBtn.style.left = x;
+    noBtn.style.top = y;
+});
+
+function sayYes() {
+    const ans = document.getElementById("retro-answer");
+    ans.innerHTML = "Yippeeee! ❤️ I knew it!";
+    ans.style.opacity = 1;
+
+    // Mostra immagine personalizzata
+    const img = document.createElement("img");
+    img.src = "img/proposal.jpeg"; 
+    img.className = "foto-final";
+    document.body.appendChild(img);
+
+    // Pioggia di cuori pixelati
+    for (let i = 0; i < 25; i++) {
+        setTimeout(() => {
+            const heart = document.createElement("div");
+            heart.className = "pixel-heart";
+            heart.innerText = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3000);
+        }, i * 120);
+    }
+}
+
+</script>
+
+</body>
+</html>

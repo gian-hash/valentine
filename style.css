@@ -254,3 +254,123 @@ footer {
     margin-top: 10px;
     font-weight: bold;
 }
+/* Sfondo pixelato */
+.retro-bg {
+    background: #f7e4e4;
+    background-image: url('img/pixel-hearts-bg.png');
+    background-size: 200px;
+}
+
+/* Finestra retro */
+.retro-window {
+    width: 350px;
+    margin: 60px auto;
+    border: 3px solid #000;
+    background: #ffe6f2;
+    box-shadow: 0 0 0 4px #000;
+    font-family: "Press Start 2P", monospace;
+}
+
+.retro-title {
+    background: #ff4d6d;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.retro-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Husky pixel art */
+.husky {
+    width: 120px;
+    image-rendering: pixelated;
+    margin-bottom: 15px;
+}
+
+/* Domanda */
+.retro-question {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Bottoni */
+.retro-buttons {
+    position: relative;
+    height: 80px;
+}
+
+.retro-yes, .retro-no {
+    padding: 10px 20px;
+    border: 2px solid #000;
+    background: white;
+    font-family: "Press Start 2P", monospace;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.retro-yes {
+    background: #b6ffb6;
+}
+
+.retro-no {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    background: #ffb3b3;
+    transition: 0.2s;
+}
+
+/* Risposta */
+.retro-answer {
+    margin-top: 20px;
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 12px;
+}
+
+/* Lettera */
+.letter-box {
+    margin-top: 25px;
+}
+
+.letter {
+    width: 100px;
+    image-rendering: pixelated;
+}
+
+.letter-text {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Cuori pixelati finali */
+.pixel-heart {
+    position: fixed;
+    top: -20px;
+    font-size: 24px;
+    animation: fallPixel 3s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes fallPixel {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+.foto-final {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    border: 3px solid #000;
+    image-rendering: pixelated;
+    z-index: 9999;
+    animation: popFinal 1s ease;
+}
