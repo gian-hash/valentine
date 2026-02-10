@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acchiappa i Cuoricini ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1>Acchiappa i Cuoricini ❤️</h1>
+    <p>Riesci a prenderne almeno 10?</p>
+</header>
+
+<div id="game-area"></div>
+
+<div class="score-box">
+    Punteggio: <span id="score">0</span>
+</div>
+
+<footer>
+    Creato con ❤️ da Gianmarco
+</footer>
+
+<script>
+let score = 0;
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "game-heart";
+    heart.innerText = "❤️";
+
+    heart.style.left = Math.random() * 90 + "vw";
+    heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+
+    heart.onclick = () => {
+        score++;
+        document.getElementById("score").innerText = score;
+        heart.remove();
+
+        if (score === 10) {
+            showWinMessage();
+        }
+    };
+
+    document.getElementById("game-area").appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}
+
+setInterval(createHeart, 600);
+
+function showWinMessage() {
+    const overlay = document.createElement("div");
+    overlay.className = "final-overlay";
+    overlay.innerHTML = `
+        <div class="final-message">
+            🎉❤️ Bravissima amore! ❤️🎉<br>
+            Hai preso 10 cuoricini!<br>
+            Questo significa che ti meriti un bacio.
+        </div>
+    `;
+    document.body.appendChild(overlay);
+
+    setTimeout(() => overlay.remove(), 5000);
+}
+</script>
+
+</body>
+</html>

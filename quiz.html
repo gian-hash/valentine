@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz per te ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1>Quiz divertente ❤️</h1>
+    <p>Vediamo quanto mi conosci davvero!</p>
+</header>
+
+<section class="quiz-container">
+
+    <div class="question">
+        <h3>1) Qual è la cosa che mi piace di più di te?</h3>
+        <button onclick="check(1,4)">Il tuo sorriso</button>
+        <button onclick="check(1,4)">Il tuo modo di guardarmi</button>
+        <button onclick="check(1,4)">La tua risata</button>
+        <button onclick="check(1,4, true)">Tutte queste cose insieme</button>
+        <p id="result1" class="result"></p>
+    </div>
+
+    <div class="question">
+        <h3>2) Dove ti porterei subito per un appuntamento perfetto?</h3>
+        <button onclick="check(2,1)">A vedere un tramonto</button>
+        <button onclick="check(2,1)">A mangiare qualcosa di buono</button>
+        <button onclick="check(2,1)">A fare una passeggiata mano nella mano</button>
+        <button onclick="check(2,1, true)">Ovunque, basta che ci sei tu</button>
+        <p id="result2" class="result"></p>
+    </div>
+
+    <div class="question">
+        <h3>3) Qual è la mia super‑abilità quando siamo insieme?</h3>
+        <button onclick="check(3,2)">Farti ridere anche quando non vuoi</button>
+        <button onclick="check(3,2)">Capire cosa pensi senza che parli</button>
+        <button onclick="check(3,2)">Rubarti il cibo dal piatto</button>
+        <button onclick="check(3,2, true)">Tutte e tre</button>
+        <p id="result3" class="result"></p>
+    </div>
+
+    <div class="question">
+        <h3>4) Cosa penso ogni volta che ti vedo?</h3>
+        <button onclick="check(4,4)">Che sei bellissima</button>
+        <button onclick="check(4,4)">Che sono fortunato</button>
+        <button onclick="check(4,4)">Che mi romperai tutto il giorno</button>
+        <button onclick="check(4,4, true)">Tutte le precedenti</button>
+        <p id="result4" class="result"></p>
+    </div>
+
+</section>
+
+<footer>
+    Creato con ❤️ da Gianmarco
+</footer>
+
+<script>
+let score = 0;
+let totalQuestions = 4;
+
+function check(q, correct, isCorrect = false) {
+    const result = document.getElementById("result" + q);
+
+    if (isCorrect) {
+        result.innerHTML = "✔️ Risposta giusta! Sei fantastica!";
+        result.style.color = "#b3ffb3";
+
+        // Effetto cuoricini
+        const burst = document.createElement("div");
+        burst.className = "burst";
+        burst.innerHTML = "❤️ 💕 💖 💗 💞";
+        result.appendChild(burst);
+        setTimeout(() => burst.remove(), 1200);
+
+        // Evita di contare due volte la stessa domanda
+        if (!result.dataset.answered) {
+            score++;
+            result.dataset.answered = "true";
+        }
+
+        // Se ha completato tutto...
+        if (score === totalQuestions) {
+            showFinalEffect();
+        }
+
+    } else {
+        result.innerHTML = "❌ Quasi! Riprova!";
+        result.style.color = "#ffb3b3";
+    }
+}
+</script>
+<script>
+function showFinalEffect() {
+    const overlay = document.createElement("div");
+    overlay.className = "final-overlay";
+    overlay.innerHTML = `
+        <div class="final-message">
+            🎉❤️ Complimenti amore! ❤️🎉<br>
+            Hai risposto a tutto!<br>
+            Sei la mia persona speciale.
+        </div>
+    `;
+    document.body.appendChild(overlay);
+
+    // Rimuovi dopo 5 secondi
+    setTimeout(() => overlay.remove(), 5000);
+}
+</script>
+
+
+
+</body>
+</html>
