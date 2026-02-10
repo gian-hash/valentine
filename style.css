@@ -273,7 +273,7 @@ footer {
 
 .retro-title {
     background: #ff4d6d;
-    color: white;
+    color: black;
     padding: 10px;
     font-size: 14px;
     display: flex;
@@ -433,3 +433,6 @@ body.retro-bg {
     font-family: "Press Start 2P", monospace;
 }
 .ricordi h2, .ricordi p { text-align: center; }
+.progress-container {
+    text-align: center;
+}
