@@ -273,7 +273,7 @@ footer {
 
 .retro-title {
     background: #ff4d6d;
-    color: black;
+    color: white;
     padding: 10px;
     font-size: 14px;
     display: flex;
@@ -295,6 +295,7 @@ footer {
 /* Domanda */
 .retro-question {
     font-size: 14px;
+    color: #000;
     margin-bottom: 20px;
 }
 
@@ -327,6 +328,7 @@ footer {
 
 /* Risposta */
 .retro-answer {
+    color: #000;
     margin-top: 20px;
     opacity: 0;
     transition: 0.5s;
@@ -345,6 +347,7 @@ footer {
 
 .letter-text {
     font-size: 12px;
+    color: #000;
     margin-top: 5px;
 }
 
@@ -429,6 +432,7 @@ body.retro-bg {
 
 .foto-caption {
     font-size: 12px;
+    color: #000;
     margin-top: 6px;
     font-family: "Press Start 2P", monospace;
 }

@@ -58,7 +58,8 @@ noBtn.addEventListener("mouseover", () => {
 
 function sayYes() {
     const ans = document.getElementById("retro-answer");
-    ans.innerHTML = "Yippeeee! ❤️ I knew it!";
+    ans.innerHTML = "YEEEEEE❤️ I knew it!";
+    ans.style.color = "black";
     ans.style.opacity = 1;
 
     // Inserisce la foto sopra la lettera
@@ -71,8 +72,8 @@ function sayYes() {
 
     const caption = document.createElement("p");
     caption.className = "foto-caption";
-    caption.innerText = "Our special moment ❤️"; // <-- scritta personalizzabile
-
+    caption.innerText = "Our special moment ❤️";
+    
     container.appendChild(img);
     container.appendChild(caption);
 
