@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentino ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<header class="hero">
+    <h1>Buon San Valentino ❤️</h1>
+    <p>Un piccolo mondo creato solo per noi.</p>
+</header>
+
+<section class="gallery">
+    <img src="img/foto1.jpg" alt="">
+    <img src="img/foto2.jpg" alt="">
+    <img src="img/foto3.jpg" alt="">
+</section>
+
+<section class="message">
+    <h2>💌Rosa Un messaggio per te</h2>
+    <p>
+        Ogni momento con te è un ricordo che custodisco nel cuore.  
+        Grazie per essere la mia persona speciale.
+    </p>
+</section>
+<a class="btn" href="storia.html">La nostra storia</a>
+<a class="btn" href="ricordi.html">I nostri ricordi</a>
+
+<footer>
+    Creato con ❤️ da Gianmarco
+</footer>
+<script>
+    const hearts = () => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+    };
+
+    setInterval(hearts, 300);
+</script>
+
+</body>
+</html>
