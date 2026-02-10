@@ -374,3 +374,42 @@ footer {
     z-index: 9999;
     animation: popFinal 1s ease;
 }
+.storia img { 
+    width: 100%; 
+    max-width: 300px;
+    height: auto; 
+    border-radius: 12px; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto; 
+}
+body.retro-bg {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+.retro-window {
+    width: 420px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+.husky {
+    width: 90px;
+    margin-top: 10px;
+    image-rendering: pixelated;
+}
+.letter {
+    width: 80px;
+    image-rendering: pixelated;
+}
+.retro-yes, .retro-no {
+    padding: 6px 14px;
+    font-size: 10px;
+}
+.retro-no {
+    position: fixed;
+    transition: 0.15s;
+    z-index: 9999;
+}

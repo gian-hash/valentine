@@ -23,6 +23,7 @@
         <div class="retro-buttons">
             <button class="retro-yes" onclick="sayYes()">YES 💘</button>
             <button class="retro-no" id="noBtn">NO 💔</button>
+
         </div>
 
         <p id="retro-answer" class="retro-answer"></p>
@@ -39,11 +40,17 @@
 const noBtn = document.getElementById("noBtn");
 
 noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 70 + "vw";
-    const y = Math.random() * 60 + "vh";
-    noBtn.style.left = x;
-    noBtn.style.top = y;
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
 });
+
 
 function sayYes() {
     const ans = document.getElementById("retro-answer");
